@@ -1,12 +1,21 @@
-const removeFromArray = function(word) {
-    let result = word.slice(2)
+function removeFromArray(arr, ...nums) {
+  const newArray = []
 
-    return result
-};
+  for (let i = 0; i < arr.length; i++) {
+    const element = arr[i]
+    let elementInNums = false
 
-removeFromArray();
-
-
-
+    for (let j = 0; j < nums.length; j++) {
+      if (element === nums[j]){
+        elementInNums = true
+      }
+    }
+    if(!elementInNums){
+      newArray.push(element)
+    }
+  }
+  return newArray
+  }
+  
 // Do not edit below this line
 module.exports = removeFromArray;
